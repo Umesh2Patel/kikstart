@@ -17,7 +17,7 @@ const web3 = new Web3(provider);
 const deploy = async () => {
   const accounts = await web3.eth.getAccounts();
 
-  console.log('Attempting to deploy from account', account[0]);
+  console.log('Attempting to deploy from account', accounts[0]);
 
   const result = await new web3.eth.Contract(JSON.parse(compiledFactory.interface))
     .deploy({ data: '0x' + compiledFactory.bytecode })
@@ -32,3 +32,7 @@ deploy();
 
 // Attempting to deploy from account, account[0]
 // Contract deployed to 0x8861CCB42Bd77fdC8cE55952c5A18b9abd11f554
+
+// umeshs-imac:ethereum umeshkhunt$ node deploy.js
+// Attempting to deploy from account 0x4c3c843b3258E5D1EB270B251132B9EE2f582f40
+// Contract deployed to 0xBaFc7D6011DcE80AD06ef67287e435645a74Dd4a
