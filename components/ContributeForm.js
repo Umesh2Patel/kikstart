@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, Input, Message } from 'semantic-ui-react';
+import { Button, Form, Input, Message, Image } from 'semantic-ui-react';
 import Campaign from '../ethereum/campaign';
 import web3 from '../ethereum/web3';
 import { Router } from '../routes';
@@ -50,6 +50,11 @@ class ContributeForm extends Component {
         <Button loading={this.state.loading} primary>
           Contribute!
         </Button>
+        <h3>Contribute ether to {this.props.address}</h3>
+        <Image src='https://chart.googleapis.com/chart?cht=qr&chs=350&chl={this.props.address}'
+                    size='medium' />
+
+        <label>Point a compatible mobile app to this code to Contribute</label>
       </Form>
     );
   }
