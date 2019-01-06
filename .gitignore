@@ -1,0 +1,6 @@
+node_modules
+node_modules-old
+package-lock.json
+package-old.json
+.idea/
+.next/
